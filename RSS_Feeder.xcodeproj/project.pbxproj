@@ -30,6 +30,7 @@
 		1D21B0FA17D8200200BEE9DA /* RXMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D21B0F817D8200200BEE9DA /* RXMLElement.m */; };
 		1D21B0FD17D8238400BEE9DA /* MTIFeedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D21B0FC17D8238400BEE9DA /* MTIFeedItem.m */; };
 		1D21B0FE17D8238400BEE9DA /* MTIFeedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D21B0FC17D8238400BEE9DA /* MTIFeedItem.m */; };
+		1DC84B5317DD17CC00787978 /* MTIFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DC84B5217DD17CC00787978 /* MTIFeedCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,8 @@
 		1D21B0F817D8200200BEE9DA /* RXMLElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RXMLElement.m; sourceTree = "<group>"; };
 		1D21B0FB17D8238400BEE9DA /* MTIFeedItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MTIFeedItem.h; path = Models/MTIFeedItem.h; sourceTree = "<group>"; };
 		1D21B0FC17D8238400BEE9DA /* MTIFeedItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MTIFeedItem.m; path = Models/MTIFeedItem.m; sourceTree = "<group>"; };
+		1DC84B5117DD17CC00787978 /* MTIFeedCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTIFeedCell.h; sourceTree = "<group>"; };
+		1DC84B5217DD17CC00787978 /* MTIFeedCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTIFeedCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +145,8 @@
 				1D21B0CE17D81D7B00BEE9DA /* MTIMasterViewController.m */,
 				1D21B0D017D81D7B00BEE9DA /* MTIDetailViewController.h */,
 				1D21B0D117D81D7B00BEE9DA /* MTIDetailViewController.m */,
+				1DC84B5117DD17CC00787978 /* MTIFeedCell.h */,
+				1DC84B5217DD17CC00787978 /* MTIFeedCell.m */,
 				1D21B0FF17D8238B00BEE9DA /* Models */,
 				1D21B0F617D8200200BEE9DA /* RaptureXML */,
 				1D21B0D317D81D7B00BEE9DA /* Images.xcassets */,
@@ -296,6 +301,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D21B0D217D81D7B00BEE9DA /* MTIDetailViewController.m in Sources */,
+				1DC84B5317DD17CC00787978 /* MTIFeedCell.m in Sources */,
 				1D21B0C517D81D7B00BEE9DA /* main.m in Sources */,
 				1D21B0CF17D81D7B00BEE9DA /* MTIMasterViewController.m in Sources */,
 				1D21B0FD17D8238400BEE9DA /* MTIFeedItem.m in Sources */,
@@ -509,6 +515,7 @@
 				1D21B0EC17D81D7B00BEE9DA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1D21B0ED17D81D7B00BEE9DA /* Build configuration list for PBXNativeTarget "RSS_FeederTests" */ = {
 			isa = XCConfigurationList;
@@ -517,6 +524,7 @@
 				1D21B0EF17D81D7B00BEE9DA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

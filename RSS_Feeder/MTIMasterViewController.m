@@ -12,6 +12,7 @@
 
 #import "RXMLElement.h"
 #import "MTIFeedItem.h"
+#import "MTIFeedCell.h"
 
 typedef void (^MTIFeedCompleationBlock)(NSString *feed, NSArray *items);
 
@@ -105,7 +106,7 @@ typedef void (^MTIFeedCompleationBlock)(NSString *feed, NSArray *items);
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    MTIFeedCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
     MTIFeedItem *object = _objects[indexPath.row];
     cell.textLabel.numberOfLines = 2;
