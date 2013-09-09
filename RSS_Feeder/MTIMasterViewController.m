@@ -20,6 +20,7 @@ typedef void (^MTIFeedCompleationBlock)(NSString *feed, NSArray *items);
     NSArray *_objects;
     NSURL *_url;
     UIRefreshControl *_refreshControl;
+    int _currentSelection;
 }
 @end
 
@@ -44,6 +45,8 @@ typedef void (^MTIFeedCompleationBlock)(NSString *feed, NSArray *items);
     [self.tableView addSubview:_refreshControl];
     
     _url = [NSURL URLWithString:@"http://feeds.reuters.com/reuters/technologyNews"];
+    
+    _currentSelection = -1;
     
 }
 
@@ -93,6 +96,24 @@ typedef void (^MTIFeedCompleationBlock)(NSString *feed, NSArray *items);
 }
 
 #pragma mark - Table View
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (_currentSelection == indexPath.row) {
+        _currentSelection = -1;
+    } else {
+        _currentSelection = indexPath.row;
+    }
+    
+    [tableView beginUpdates];
+    [tableView endUpdates];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if ([indexPath row] == _currentSelection) {
+        return  130;
+    }
+    else return 60;
+}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -106,12 +127,16 @@ typedef void (^MTIFeedCompleationBlock)(NSString *feed, NSArray *items);
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    MTIFeedCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    MTIFeedCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FeedCell" forIndexPath:indexPath];
     
     MTIFeedItem *object = _objects[indexPath.row];
-    cell.textLabel.numberOfLines = 2;
-    cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
-    cell.textLabel.attributedText = object.displayText;
+    cell.titleLabel.numberOfLines = 2;
+    cell.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    cell.titleLabel.attributedText = object.titleText;
+    
+    cell.descLabel.numberOfLines = 3;
+    cell.descLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    cell.descLabel.attributedText = object.descText;
     return cell;
 }
 

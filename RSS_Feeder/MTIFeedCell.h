@@ -10,7 +10,8 @@
 
 @interface MTIFeedCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UILabel *titleLable;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *descLabel;
 
 
 @end

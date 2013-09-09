@@ -21,9 +21,17 @@
     return newItem;
 }
 
-- (NSAttributedString *)displayText
+- (NSAttributedString *)titleText
 {
-    return [[NSAttributedString alloc] initWithString:_title];
+    return [[NSAttributedString alloc] initWithString:_title
+                                           attributes:@{NSFontAttributeName:[UIFont preferredFontForTextStyle:UIFontTextStyleHeadline]}];
+}
+
+- (NSAttributedString *)descText
+{
+    return [[NSAttributedString alloc] initWithString:_desc
+                                           attributes:@{NSFontAttributeName:[UIFont preferredFontForTextStyle:UIFontTextStyleFootnote]}];
+            
 }
 
 @end

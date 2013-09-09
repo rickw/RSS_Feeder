@@ -13,7 +13,8 @@
 @property (strong, nonatomic) NSString *title;
 @property (strong, nonatomic) NSString *desc;
 @property (strong, nonatomic) NSURL *itemLink;
-@property (readonly)          NSAttributedString *displayText;
+@property (readonly)          NSAttributedString *titleText;
+@property (readonly)          NSAttributedString *descText;
 
 +(MTIFeedItem *)itemWithTitle:(NSString *)title description:(NSString* )description andLink:(NSString *)link;
 
