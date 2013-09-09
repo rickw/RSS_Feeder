@@ -48,8 +48,6 @@ typedef void (^MTIFeedCompleationBlock)(NSString *feed, NSArray *items);
     
     _currentSelection = -1;
     
-    [_refreshControl beginRefreshing];
-    
 }
 
 - (void)viewDidAppear:(BOOL)animated
