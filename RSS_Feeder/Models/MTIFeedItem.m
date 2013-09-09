@@ -24,7 +24,7 @@
 - (NSAttributedString *)titleText
 {
     return [[NSAttributedString alloc] initWithString:_title
-                                           attributes:@{NSFontAttributeName:[UIFont preferredFontForTextStyle:UIFontTextStyleHeadline]}];
+                                           attributes:@{NSFontAttributeName:[UIFont preferredFontForTextStyle:UIFontTextStyleSubheadline],                                                                                    NSTextEffectAttributeName:NSTextEffectLetterpressStyle}];
 }
 
 - (NSAttributedString *)descText
