@@ -45,14 +45,24 @@ typedef void (^MTIFeedCompleationBlock)(NSString *feed, NSArray *items);
     [self.tableView addSubview:_refreshControl];
     
     _url = [NSURL URLWithString:@"http://feeds.reuters.com/reuters/technologyNews"];
-    
     _currentSelection = -1;
+    [self refreshInvoked:_refreshControl forState:UIControlStateNormal];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
     
+    if (_currentSelection > -1) {
+        _currentSelection = -1;
+        [self.tableView beginUpdates];
+        [self.tableView endUpdates];
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    [self refreshInvoked:_refreshControl forState:UIControlStateNormal];
+    [super viewDidAppear:animated];
 }
 
 - (void)didReceiveMemoryWarning
